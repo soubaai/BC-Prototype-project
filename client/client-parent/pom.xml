@@ -78,10 +78,4 @@
 		</pluginManagement>
 
 	</build>
-
-	<scm>
-		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/client-parent</url>
-		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/client-parent</connection>
-		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/client-parent</developerConnection>
-	</scm>
 </project>

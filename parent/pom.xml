@@ -410,11 +410,6 @@
 		</pluginManagement>
 
 	</build>
-	<scm>
-		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/parent</url>
-		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/parent</connection>
-		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/parent</developerConnection>
-	</scm>
 
 	<repositories>
 		<repository>

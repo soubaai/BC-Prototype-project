@@ -12,10 +12,14 @@
 		<module>../client/client-trunk</module>
 	</modules>
 
-	<scm>
-		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/trunk</url>
-		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/trunk</connection>
-		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/trunk</developerConnection>
+
+	
+		<scm>
+		<url>https://github.com/soubaai/BC-Prototype-project</url>
+		<connection>scm:git:https://github.com/soubaai/BC-Prototype-project.git</connection>
+		 <developerConnection>scm:svn:https://github.com/soubaai/BC-Prototype-project.git</developerConnection>
+
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>

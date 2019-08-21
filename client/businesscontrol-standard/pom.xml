@@ -79,10 +79,6 @@
 		</pluginManagement>
 
 	</build>
-	<scm>
-		<url>http://svn.pebsbuild01.emea.cegedim.grp/svn/bonita/trunk/businesscontrolset/businesscontrol/businesscontrol-client/businesscontrol-standard</url>
-		<connection>scm:svn:http://svn.pebsbuild01.emea.cegedim.grp/svn/bonita/trunk/businesscontrolset/businesscontrol/businesscontrol-client/businesscontrol-standard</connection>
-		<developerConnection>scm:svn:http://svn.pebsbuild01.emea.cegedim.grp/svn/bonita/trunk/businesscontrolset/businesscontrol/businesscontrol-client/businesscontrol-standard</developerConnection>
-	</scm>
+
 
 </project>

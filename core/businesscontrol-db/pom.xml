@@ -36,10 +36,4 @@
 			<url>http://localhost:8081/repository/api-release/</url>
 		</repository>
 	</distributionManagement>
-	
-		<scm>
-		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/core/businesscontrol-db/tags/businesscontrol-db-2.4.24</url>
-		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/core/businesscontrol-db/tags/businesscontrol-db-2.4.24</connection>
-		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/core/businesscontrol-db/tags/businesscontrol-db-2.4.24</developerConnection>
-	</scm>
 </project>

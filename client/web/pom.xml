@@ -174,9 +174,4 @@
 		</profile>
 	</profiles>
 
-	<scm>
-		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</url>
-		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</connection>
-		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</developerConnection>
-	</scm>
 </project>
