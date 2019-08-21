@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cegedim.hs.businesscontrols.client</groupId>
+		<artifactId>client-parent</artifactId>
+		<version>2.5.77-SNAPSHOT</version>
+		<relativePath>../client-parent/pom.xml</relativePath>
+
+	</parent>
+	<artifactId>web</artifactId>
+  <version>2.12.25-SNAPSHOT</version>
+	<name>web</name>
+	<packaging>war</packaging>
+
+	<properties>
+		<!-- <businesscontrol-core.version>2.3.2-SNAPSHOT</businesscontrol-core.version> -->
+		<!-- <businesscontrol-standard.version>2.3.2-SNAPSHOT</businesscontrol-standard.version> -->
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.cegedim.hs.businesscontrols.core</groupId>
+			<artifactId>businesscontrol-db</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.cegedim.hs.businesscontrols.client</groupId>
+			<artifactId>businesscontrol-standard</artifactId>
+			<!-- <version>${businesscontrol-standard.version}</version> -->
+		</dependency>
+
+
+		<!-- Logging -->
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<!-- <filters> -->
+		<!-- <filter>src/test/resources/profiles/application-${build.profile.id}.properties</filter> -->
+		<!-- </filters> -->
+		<!-- <resources> -->
+		<!-- <resource> -->
+		<!-- <directory>src/main/resources</directory> -->
+		<!-- <filtering>true</filtering> -->
+		<!-- </resource> -->
+		<!-- </resources> -->
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<!-- <tag>QA-${releaseVersion}</tag> -->
+						<!-- <tagNameFormat>v@{project.version}</tagNameFormat> -->
+						<autoVersionSubmodules>false</autoVersionSubmodules>
+						<!-- releaseProfiles configuration will actually force a Maven profile 
+							� the `releases` profile � to become active during the Release process. -->
+						<releaseProfiles>releases</releaseProfiles>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-scm-plugin</artifactId>
+							<version>1.8.1</version>
+
+						</dependency>
+					</dependencies>
+				</plugin>
+
+<!-- 				<plugin> -->
+<!-- 					<groupId>org.jboss.as.plugins</groupId> -->
+<!-- 					<artifactId>jboss-as-maven-plugin</artifactId> -->
+<!-- 					<version>7.3.Final</version> -->
+
+<!-- 					<configuration> -->
+<!-- 						<hostname>127.0.0.1</hostname> -->
+<!-- 						<port>9990</port> -->
+<!-- 						<username>admin</username> -->
+<!-- 						<password>123</password> -->
+<!-- 					</configuration> -->
+
+<!-- 				</plugin> -->
+
+
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>2.0.0.Final</version>
+					<configuration>
+						<hostname>127.0.0.1</hostname>
+						<port>9990</port>
+						<username>admin</username>
+						<password>123</password>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- Profile configuration -->
+	<profiles>
+		<!-- The configuration of the development profile -->
+		<profile>
+			<id>dev</id>
+			<!-- The development profile is active by default -->
+			<properties>
+				<build.profile.id>dev</build.profile.id>
+			</properties>
+		</profile>
+		<!-- The configuration of the testing profile -->
+		<profile>
+			<id>deploy</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<build.profile.id>deploy</build.profile.id>
+			</properties>
+		</profile>
+
+
+		<profile>
+			<id>deployRemote</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.wildfly.plugins</groupId>
+						<artifactId>wildfly-maven-plugin</artifactId>
+						<version>1.1.0.Final</version>
+						<configuration>
+							<hostname>remote_host</hostname>
+							<protocol>https-remoting</protocol>
+							<port>9993</port>
+							<username>jboss-admin</username>
+							<password>jboss-admin-password</password>
+							<jboss-home>remote-jboss-home</jboss-home>
+							<name>${project.build.finalName}.${project.packaging}</name>
+						</configuration>
+						<executions>
+							<!-- Undeploy the application on clean -->
+							<execution>
+								<id>undeploy</id>
+								<phase>clean</phase>
+								<goals>
+									<goal>undeploy</goal>
+								</goals>
+								<configuration>
+									<ignoreMissingDeployment>true</ignoreMissingDeployment>
+								</configuration>
+							</execution>
+
+							<!-- Deploy the application on install -->
+							<execution>
+								<id>deploy</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>deploy</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+	<scm>
+		<url>https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</url>
+		<connection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</connection>
+		<developerConnection>scm:svn:https://msoubaai.emea.cegedim.grp/svn/bonita/aut-version-business-control/client/web</developerConnection>
+	</scm>
+</project>

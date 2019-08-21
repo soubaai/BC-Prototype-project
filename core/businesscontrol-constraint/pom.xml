@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cegedim.hs.businesscontrols.core</groupId>
+		<artifactId>core</artifactId>
+		<version>2.3.27-SNAPSHOT</version>
+	</parent>
+	<artifactId>businesscontrol-constraint</artifactId>
+  <version>2.3.30-SNAPSHOT</version>
+	<name>businesscontrol-constraint</name>
+	<description>businesscontrol-constraint</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.cegedim.hs.businesscontrols.core</groupId>
+			<artifactId>businesscontrol-common</artifactId>
+			<version>2.3.28-SNAPSHOT</version>
+		</dependency>
+		
+	</dependencies>
+</project>

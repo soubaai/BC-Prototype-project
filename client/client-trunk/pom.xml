@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<packaging>pom</packaging>
+	<version>1.2.22-SNAPSHOT</version>
+	<groupId>com.cegedim.hs.businesscontrols</groupId>
+	<artifactId>client-trunk</artifactId>
+	<name>client-trunk</name>
+	<description>client-trunk</description>
+	<modules>
+		<module>../client-parent</module>
+		<module>../businesscontrol-standard</module>
+		<module>../web</module>
+	</modules>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://localhost:8081/repository/api-release/</url>
+		</repository>
+	</distributionManagement>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<!-- <tag>QA-${releaseVersion}</tag> -->
+						<!-- <tagNameFormat>v@{project.version}</tagNameFormat> -->
+						<autoVersionSubmodules>false</autoVersionSubmodules>
+						<!-- releaseProfiles configuration will actually force a Maven profile 
+							� the `releases` profile � to become active during the Release process. -->
+						<releaseProfiles>releases</releaseProfiles>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-scm-plugin</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+	</build>
+</project>
