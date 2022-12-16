@@ -9,7 +9,7 @@
 	<description>parent</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.2.16.RELEASE</spring.version>
+		<spring.version>5.2.20.RELEASE</spring.version>
 		<hibernate.version>4.2.21.Final</hibernate.version>
 		<ehcache.version>2.10.0</ehcache.version>
 		<servlet.version>2.5</servlet.version>
